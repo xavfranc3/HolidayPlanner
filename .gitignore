@@ -63,3 +63,5 @@ config/config.env
 
 # Webstorm config files
 .idea
+
+config/.DS_Store
