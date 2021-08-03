@@ -56,9 +56,10 @@ web_modules/
 
 
 # dotenv environment variables file
-.env
-.env.test
-.env.production
+config/config.env
+*.env
+*.env.test
+*.env.production
 
 # Webstorm config files
 .idea
