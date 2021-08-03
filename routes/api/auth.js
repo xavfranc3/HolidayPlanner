@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
+const auth = require('../../middleware/auth')
 
 // User model
 const User = require('../../models/User')
@@ -30,19 +31,34 @@ router.post('/', async (req, res) => {
                     process.env.JWT_SECRET,
                     { expiresIn: 3600 },
                     (err, token) => {
-                        if(err) throw err;
-                        res.json({
-                            token,
-                            user: {
-                                id: user.id,
-                                name: user.name,
-                                email: user.email
-                            }
-                        })
+                        if(err) {
+                            console.error(err)
+                        } else {
+                            res.json({
+                                token,
+                                user: {
+                                    id: user.id,
+                                    name: user.name,
+                                    email: user.email
+                                }
+                            })
+                        }
+
                     }
                 )
             })
     }
+});
+
+/**
+ * @desc Get user data
+ * @route GET api/auth/user
+ * @access Private
+ */
+router.get('/user', auth, (req, res) => {
+    const user = User.findById(req.user.id)
+        .select('-password')
+        .then(user => res.json(user));
 });
 
 
