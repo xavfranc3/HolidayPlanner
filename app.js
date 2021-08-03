@@ -10,9 +10,10 @@ connectDb()
 const app = express()
 
 // Body parser
-app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
+// Routes
+app.use('/api/users', require('./routes/api/users'))
 
 // Listen
 const PORT = process.env.PORT || 3000
