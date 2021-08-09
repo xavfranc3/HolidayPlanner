@@ -2,21 +2,12 @@
   "name": "holidayplanner",
   "version": "1.0.0",
   "description": "Holiday planner app",
-  "main": "app.js",
-  "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/xavfranc3/HolidayPlanner.git"
-  },
   "author": "Xavier FRANCOIS",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/xavfranc3/HolidayPlanner/issues"
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js"
   },
-  "homepage": "https://github.com/xavfranc3/HolidayPlanner#readme",
+  "main": "app.js",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "concurrently": "^6.2.0",
@@ -28,5 +19,18 @@
     "mongoose": "^5.13.5",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0"
+  },
+  "devDependencies": {
+    "sass": "~1.32.0",
+    "sass-loader": "^10.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/xavfranc3/HolidayPlanner/issues"
+  },
+  "homepage": "https://github.com/xavfranc3/HolidayPlanner#readme",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xavfranc3/HolidayPlanner.git"
   }
 }
